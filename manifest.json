@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie Session Sync & Security Lab",
+  "version": "1.0.0",
+  "description": "Export, preview, copy, download, import, validate, and restore cookies across Chromium-based browsers with a local security education lab.",
+  "action": {
+    "default_title": "Cookie Session Sync",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "icons/icon16.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  },
+  "permissions": [
+    "activeTab",
+    "clipboardRead",
+    "clipboardWrite",
+    "cookies",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; base-uri 'none';"
+  },
+  "minimum_chrome_version": "102"
+}

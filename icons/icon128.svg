@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Cookie Sync icon">
+  <rect width="128" height="128" rx="26" fill="#2563eb"/>
+  <path d="M96 64c0 17.7-14.3 32-32 32S32 81.7 32 64s14.3-32 32-32h1.8c1 8.8 8 15.8 16.8 16.8A16 16 0 0 0 96 64Z" fill="#f8fafc"/>
+  <circle cx="52" cy="54" r="5.5" fill="#2563eb"/>
+  <circle cx="72" cy="69" r="5" fill="#2563eb"/>
+  <circle cx="52" cy="80" r="4.8" fill="#2563eb"/>
+  <circle cx="77" cy="40" r="4.2" fill="#93c5fd"/>
+  <circle cx="91" cy="52" r="3.8" fill="#93c5fd"/>
+  <path d="M39 37a44 44 0 0 1 25-8" fill="none" stroke="#bfdbfe" stroke-width="7" stroke-linecap="round"/>
+  <path d="M89 91a44 44 0 0 1-25 8" fill="none" stroke="#bfdbfe" stroke-width="7" stroke-linecap="round"/>
+</svg>

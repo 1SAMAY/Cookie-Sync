@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cookie Session Sync</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell" aria-label="Cookie Session Sync">
+      <header class="header">
+        <div class="brand">
+          <img src="icons/icon48.svg" width="32" height="32" alt="">
+          <div>
+            <h1>Cookie Sync</h1>
+            <p id="currentDomain">No tab selected</p>
+          </div>
+        </div>
+        <span id="cookieCount" class="count-pill" aria-live="polite">0</span>
+      </header>
+
+      <section class="card" aria-labelledby="exportTitle">
+        <div class="section-heading">
+          <h2 id="exportTitle">Export</h2>
+          <span id="exportState" class="state-text">Ready</span>
+        </div>
+        <div class="button-grid">
+          <button id="exportJsonBtn" type="button" class="btn primary" aria-label="Export cookies as formatted JSON">Export JSON</button>
+          <button id="exportNetscapeBtn" type="button" class="btn primary" aria-label="Export cookies as Netscape HTTP cookie file">Export Netscape</button>
+          <button id="copyJsonBtn" type="button" class="btn" aria-label="Copy JSON cookie export to clipboard" disabled>Copy JSON</button>
+          <button id="copyNetscapeBtn" type="button" class="btn" aria-label="Copy Netscape cookie export to clipboard" disabled>Copy Netscape</button>
+          <button id="downloadJsonBtn" type="button" class="btn" aria-label="Download JSON cookie file" disabled>Download JSON</button>
+          <button id="downloadNetscapeBtn" type="button" class="btn" aria-label="Download Netscape cookie file" disabled>Download Netscape</button>
+        </div>
+      </section>
+
+      <section class="card preview-card" aria-labelledby="previewTitle">
+        <div class="section-heading">
+          <h2 id="previewTitle">Preview</h2>
+          <div class="segmented" role="tablist" aria-label="Preview format">
+            <button id="jsonTabBtn" type="button" class="segment active" role="tab" aria-selected="true" aria-controls="previewCode">JSON</button>
+            <button id="netscapeTabBtn" type="button" class="segment" role="tab" aria-selected="false" aria-controls="previewCode">Netscape</button>
+          </div>
+        </div>
+        <pre class="preview" tabindex="0"><code id="previewCode" aria-label="Formatted cookie preview">Export cookies to preview them here.</code></pre>
+        <button id="clearPreviewBtn" type="button" class="btn subtle full-width" aria-label="Clear cookie preview" disabled>Clear Preview</button>
+      </section>
+
+      <section class="card" aria-labelledby="importTitle">
+        <div class="section-heading">
+          <h2 id="importTitle">Import</h2>
+          <span id="importState" class="state-text">Idle</span>
+        </div>
+        <label class="sr-only" for="importText">Paste JSON or Netscape cookie content</label>
+        <textarea id="importText" class="import-textarea" rows="5" spellcheck="false" placeholder="Paste JSON or Netscape cookies"></textarea>
+        <div class="button-grid">
+          <button id="pasteImportBtn" type="button" class="btn success" aria-label="Paste from clipboard or import the manual text area">Paste &amp; Import</button>
+          <button id="simulateBypassBtn" type="button" class="btn success outline span-2" aria-label="Simulate local client-side cookie bypass">Simulate Client-Side Bypass</button>
+        </div>
+      </section>
+
+      <section class="card prompt-card" aria-labelledby="promptTitle">
+        <div class="section-heading">
+          <h2 id="promptTitle">Auth Check</h2>
+          <span class="state-text">Read-only</span>
+        </div>
+        <button id="checkAuthBtn" type="button" class="btn success outline full-width" aria-label="Check active page for client-side authentication weakness signals">Check Active Page</button>
+        <ul id="authCheckResults" class="check-results" aria-live="polite">
+          <li class="muted">Run a read-only check to review cookies, storage, and front-end auth signals.</li>
+        </ul>
+      </section>
+
+      <section class="card logs-card" aria-labelledby="logsTitle">
+        <div class="section-heading">
+          <h2 id="logsTitle">Status</h2>
+          <button id="clearLogsBtn" type="button" class="icon-btn" aria-label="Clear status log">Clear</button>
+        </div>
+        <ul id="statusLog" class="status-log" role="log" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <div id="toastRegion" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "cookie-session-sync-security-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local Express demonstration app for insecure client-side state management.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
